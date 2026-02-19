@@ -10,10 +10,11 @@ import Footer from "../components/Footer.jsx";
 import DitchSection from "../components/DitchSection.jsx";
 import AgentSection from "../components/AgentSection.jsx";
 import MobileShowcase from "../components/MobileShowcase.jsx";
+// import CRMSection from "../components/CRMSection.jsx";
 
 function App() {
   return (
-    <div className="bg-[#eae7df] min-h-screen">
+    <div className="bg-[#F6F5F2] min-h-screen">
       <div className="bg-[#f6f5f2] rounded-3xl min-h-screen relative overflow-hidden">
         <Navbar />
         <Hero />
@@ -23,6 +24,7 @@ function App() {
     <AiQuestionsSection/>
     <TestimonialSection/>
     <MobileShowcase/>
+    {/* <CRMSection/> */}
     <AgentSection/>
     <DitchSection/>
     <FAQSection/>

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import img1 from "../assets/side1.avif";
-import img2 from "../assets/side2.avif";
-import img3 from "../assets/side3.avif";
-import img4 from "../assets/Logo.png";
+import img1 from "../assets/Images/side1.png";
+import img2 from "../assets/Images/slide2.png";
+import img3 from "../assets/Images/slide3.png";
+import img4 from "../assets/Images/slide3.png";
 
 const steps = [
   {
@@ -11,7 +11,7 @@ const steps = [
     step: "STEP 1",
     title: "CRM Sync & Team Visibility",
     description:
-      "Enquiries from REA, Domain, your website, and Facebook are captured the moment they arrive — instantly routed to the right agent with zero manual triage.",
+      "Enquiries are captured from any platform when they arrive  instantly routed to the right agent with zero manual triage.",
     image: img1,
   },
   {
@@ -19,7 +19,7 @@ const steps = [
     step: "STEP 2",
     title: "AI Enrichment & Qualification",
     description:
-      "Harbour AI reads every enquiry and extracts what matters: intent, suburb preference, budget range, timeline, and finance readiness — so your agent enters every conversation prepared.",
+      "Harbour AI reads every enquiry and extracts what matters: intent, suburb preference, budget range, timeline, and finance readiness so your agent enters every conversation prepared.",
     image: img2,
   },
   {
@@ -35,7 +35,7 @@ const steps = [
     step: "STEP 4",
     title: "CRM Sync & Team Visibility",
     description:
-      "Every message, summary, task, and stage update writes back to your CRM — Reapit, Rex, Box+Dice, or HubSpot. Your manager dashboard stays accurate without anyone lifting a finger.",
+      "Every message, summary, task, and stage update writes back to your CRM such as Reapit, Rex, Box+Dice, or HubSpot. Your manager dashboard stays accurate without anyone lifting a finger.",
     image: img4,
   },
 ];
@@ -65,31 +65,29 @@ export default function AgentSection() {
   }, []);
 
   return (
-    <section className="bg-[#f5f3ef] py-24 px-4 md:px-40">
+    <section className="py-14 px-4 md:px-14" id="features">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">
-            Agent-powered intelligence.
-            <br /> Built to work for you.
+         Built to work for you.
           </h2>
           <p className="text-gray-600">
-            Dcluttr connects the dots, so you don’t have to.
+          Harbour connects the dots between portals, CRM, and your team so you don't have to.
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-16">
 
           {/* LEFT SIDE (Scrolling Content) */}
-          <div className="md:w-1/2 space-y-40">
+          <div className="md:w-1/2 space-y-20">
             {steps.map((item, index) => (
               <div
                 key={item.id}
                 ref={(el) => (refs.current[index] = el)}
                 className="min-h-[60vh]"
               >
-                <div className="bg-black w-14 h-14 rounded-xl mb-6"></div>
                 <p className="text-sm text-gray-500 mb-2">{item.step}</p>
                 <h3 className="text-3xl font-semibold mb-4">
                   {item.title}

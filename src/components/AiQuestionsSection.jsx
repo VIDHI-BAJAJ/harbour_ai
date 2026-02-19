@@ -7,7 +7,7 @@ const QUESTIONS = [
   },
   {
     icon: "💬",
-    text: "How many REA enquiries did we respond to in under 5 minutes this week?",
+    text: "How many enquiries did we respond to in under 5 minutes this week?",
   },
   {
     icon: "💬",
@@ -44,7 +44,9 @@ export default function AskAISection() {
           </p>
 
           <button className="mt-8 bg-white text-black px-6 py-3 rounded-xl font-medium hover:opacity-90 transition">
-            Get Started for free →
+            <a  href="https://calendly.com/pragundass-ai/10min?month=2026-02"
+    target="_blank"
+    rel="noopener noreferrer">Get Started for free → </a>
           </button>
         </div>
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { Linkedin } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../assets/footerlogo.png";
 
 export default function Footer() {
   return (
-    <section className="w-full bg-[#f5f3ef] px-4 md:px-8 pb-10">
+    <section className="w-full px-4 md:px-8 pb-10">
       <div className="bg-black text-white rounded-[32px] px-6 md:px-16 py-12 md:py-16 max-w-7xl mx-auto">
 
         {/* TOP SECTION */}
@@ -15,9 +15,9 @@ export default function Footer() {
             <img
               src= {logo}   // <-- your dcluttr logo image here
               alt="aievoked"
-              className="h-24 md:h-10 object-contain"
+              className="h-10 md:h-12 object-contain"
             />
-            <p>The AI Copilot for Australian Real Estate</p>
+            <p>The AI Copilot for  Real Estate</p>
           </div>
 
           {/* Use Cases */}
@@ -43,7 +43,7 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>hello@harbourhq.ai</li>
+              <li>hello@aievoked.com</li>
               <li>Book a Demo</li>
               <li>LinkedIn</li>
               <li>Support</li>
@@ -53,9 +53,17 @@ export default function Footer() {
 
           {/* LinkedIn Icon */}
           <div className="absolute top-0 right-0 md:static">
-            <div className="bg-white text-black rounded-full p-2 w-9 h-9 flex items-center justify-center cursor-pointer hover:scale-105 transition">
-              <Linkedin size={18} />
-            </div>
+          <div className="absolute top-0 right-0 md:static">
+  <a
+    href="https://www.linkedin.com/company/ai-evoked/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white text-black rounded-full p-2 w-9 h-9 flex items-center justify-center cursor-pointer hover:scale-105 transition"
+  >
+    <Linkedin size={18} />
+  </a>
+</div>
+
           </div>
         </div>
 
@@ -66,7 +74,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-6 text-gray-500 text-sm">
 
           <p>
-           Harbour AI Pty Ltd   • Copyright © 2026
+           Ai Evoked  • Copyright © 2026
           </p>
 
           <div className="flex gap-6">

@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import screen1 from "../assets/mobile1.avif";
-import screen2 from "../assets/mobil2.avif";
-import screen3 from "../assets/mobil3.avif";
-import screen4 from "../assets/mobil4.avif";
+import screen1 from "../assets/Images/mobilemockup.png";
+import screen2 from "../assets/Images/mobilemockup2.png";
+
 
 const sections = [
   {
@@ -13,72 +12,86 @@ const sections = [
   },
   {
     title: "AI-driven Recommendations",
-    desc: "Make smarter decisions with actionable insights from AI",
+    desc: "Make smarter decisions with actionable insights from AI.",
     image: screen2,
-  },
-  {
-    title: "Deep Store-Level Insights",
-    desc: "Drill down into SKU and locality-level performance.",
-    image: screen3,
-  },
-  {
-    title: "No nonsense alerts",
-    desc: "Push notifications for critical reports and insights - no noise, just signals.",
-    image: screen4,
   },
 ];
 
 export default function MobileFixedSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const triggers = useRef([]);
 
   useEffect(() => {
-    const observers = [];
+    const handleScroll = () => {
+      const section = document.getElementById("scroll-section");
+      if (!section) return;
 
-    triggers.current.forEach((el, index) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveIndex(index);
-          }
-        },
-        { threshold: 0.6 }
+      const rect = section.getBoundingClientRect();
+      const scrollHeight = section.offsetHeight - window.innerHeight;
+
+      if (scrollHeight <= 0) return;
+
+      const progress = Math.min(
+        Math.max(-rect.top / scrollHeight, 0),
+        1
       );
 
-      if (el) observer.observe(el);
-      observers.push(observer);
-    });
+      const total = sections.length;
+      const segment = 1 / total;
 
-    return () => observers.forEach((obs) => obs.disconnect());
+      let newIndex = 0;
+
+      for (let i = 0; i < total; i++) {
+        if (progress >= segment * i && progress < segment * (i + 1)) {
+          newIndex = i;
+          break;
+        }
+      }
+
+      if (progress >= 1) {
+        newIndex = total - 1;
+      }
+
+      setActiveIndex(newIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section className="bg-[#f5f3ef] py-24 relative">
-  
-      {/* SECTION HEADER */}
-      <div className="text-center mb-16 px-6">
+    <section className="py-14 sm:py-16 lg:py-20 ">
+
+      {/* HEADER */}
+      <div className="text-center px-6">
         <h2 className="text-3xl md:text-5xl font-semibold mb-4">
           Analyse it all right from your pocket
         </h2>
         <p className="text-gray-600 max-w-xl mx-auto">
-          Our iOS and Android Mobile app helps you access AI-driven insights - in a matter of seconds
+          Our iOS and Android Mobile app helps you access AI-driven insights.
         </p>
       </div>
-  
-      {/* ========================= */}
-      {/* DESKTOP VERSION */}
-      {/* ========================= */}
-      <div className="hidden md:block relative h-[400vh]">
-  
-        <div className="sticky top-32 h-screen flex items-center justify-center">
-  
-          <div className="grid grid-cols-3 max-w-6xl w-full">
-  
+
+      {/* SCROLL SECTION */}
+      <div
+        id="scroll-section"
+        className="relative h-[400vh]"
+      >
+
+        {/* STICKY WRAPPER */}
+        <div className="sticky top-0 md:top-24 h-screen md:h-[80vh] flex items-center justify-center">
+
+          {/* ================= DESKTOP ================= */}
+          <div className="hidden md:grid grid-cols-3 items-center max-w-6xl w-full px-8">
+
             {/* LEFT TEXT */}
-            <div className="flex items-center justify-end pr-12">
-              {activeIndex % 2 !== 0 && (
-                <div className="max-w-sm text-right transition-all duration-500">
-                  <div className="h-[2px] bg-green-500 mb-6 w-full"></div>
+            <div className="flex justify-end pr-16">
+              {activeIndex % 2 === 1 && (
+                <div className="max-w-sm text-right relative">
+
+                  <div className="absolute top-6 right-[-100px] w-[100px] h-[2px] bg-green-500"></div>
+
                   <h3 className="text-2xl font-semibold mb-4">
                     {sections[activeIndex].title}
                   </h3>
@@ -88,21 +101,24 @@ export default function MobileFixedSection() {
                 </div>
               )}
             </div>
-  
-            {/* CENTER PHONE */}
+
+            {/* PHONE */}
             <div className="flex justify-center">
               <img
+                key={activeIndex}
                 src={sections[activeIndex].image}
                 alt=""
-                className="w-[340px] transition-all duration-500"
+                className="h-[80vh] w-auto object-contain transition-all duration-300"
               />
             </div>
-  
+
             {/* RIGHT TEXT */}
-            <div className="flex items-center justify-start pl-12">
+            <div className="flex justify-start pl-16">
               {activeIndex % 2 === 0 && (
-                <div className="max-w-sm transition-all duration-500">
-                  <div className="h-[2px] bg-green-500 mb-6 w-full"></div>
+                <div className="max-w-sm relative">
+
+                  <div className="absolute top-6 left-[-100px] w-[100px] h-[2px] bg-green-500"></div>
+
                   <h3 className="text-2xl font-semibold mb-4">
                     {sections[activeIndex].title}
                   </h3>
@@ -112,62 +128,34 @@ export default function MobileFixedSection() {
                 </div>
               )}
             </div>
-  
+
           </div>
-  
-        </div>
-  
-        {/* Desktop Scroll Triggers */}
-        <div className="absolute inset-0">
-          {sections.map((_, index) => (
-            <div
-              key={index}
-              ref={(el) => (triggers.current[index] = el)}
-              className="h-screen"
+
+          {/* ================= MOBILE ================= */}
+          <div className="md:hidden flex flex-col items-center">
+
+            <img
+              key={activeIndex}
+              src={sections[activeIndex].image}
+              alt=""
+              className="w-[260px] mb-8 transition-all duration-300 h-full"
             />
-          ))}
-        </div>
-  
-      </div>
-  
-      {/* ========================= */}
-      {/* MOBILE VERSION (UNCHANGED) */}
-      {/* ========================= */}
-      <div className="md:hidden relative h-[400vh]">
-  
-        <div className="sticky top-24 flex flex-col items-center">
-  
-          <img
-            src={sections[activeIndex].image}
-            alt=""
-            className="w-[260px] transition-all duration-500 mb-8"
-          />
-  
-          <div className="text-center px-6 max-w-md">
-            <h3 className="text-xl font-semibold mb-3">
-              {sections[activeIndex].title}
-            </h3>
-            <p className="text-gray-600 text-sm">
-              {sections[activeIndex].desc}
-            </p>
+
+            <div className="text-center px-6 max-w-md">
+              <h3 className="text-xl font-semibold mb-3">
+                {sections[activeIndex].title}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {sections[activeIndex].desc}
+              </p>
+            </div>
+
           </div>
-  
+
         </div>
-  
-        {/* Mobile Scroll Triggers */}
-        <div className="absolute inset-0">
-          {sections.map((_, index) => (
-            <div
-              key={index}
-              ref={(el) => (triggers.current[index] = el)}
-              className="h-screen"
-            />
-          ))}
-        </div>
-  
+
       </div>
-  
+
     </section>
   );
-  
 }

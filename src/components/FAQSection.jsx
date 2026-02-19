@@ -7,10 +7,6 @@ const faqs = [
     answer: "No. Harbour sits on top of your existing CRM — Reapit, Rex, Box+Dice, MRI Vault, HubSpot, or Salesforce. It enriches records, logs activities, and keeps your pipeline current. No migration, no disruption.",
   },
   {
-    question: "How does Harbour connect to REA and Domain?",
-    answer: "Harbour uses official partner APIs and webhooks provided by REA Group and Domain — not email parsing or screen scraping. Your account's approved integrations are set up during onboarding.",
-  },
-  {
     question: "Is this compliant with Australian Spam Act and Privacy Act requirements?",
     answer: "Harbour is designed with Australian compliance in mind. Automated messages include compliant opt-out mechanisms. Consent is logged per channel. Data handling is aligned to the Australian Privacy Principles (APPs). We recommend all customers review our privacy documentation and engage their own legal counsel for specific advice.",
   },

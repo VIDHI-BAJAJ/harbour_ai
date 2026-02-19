@@ -1,154 +1,147 @@
-import React from "react";
-import dashboard from "../assets/dashboard.png";
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import dashboard from "../assets/Images/dashboard.png";
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const rotateX = useTransform(scrollY, [0, 500], isDesktop ? [20, 0] : [0, 0]);
+  const y = useTransform(scrollY, [0, 500], isDesktop ? [150, 0] : [0, 0]);
+  const scale = useTransform(scrollY, [0, 500], isDesktop ? [1.05, 1] : [1, 1]);
+  const opacity = useTransform(scrollY, [0, 200], isDesktop ? [0, 1] : [1, 1]);
+
   return (
-    <section className="relative pt-16 pb-20 text-center overflow-hidden">
+    <section className="relative pt-40 pb-32 text-center bg-[#f5f3ef] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
 
-      {/* Decorative Lines */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute left-0 top-20 w-40 h-40 border-l border-t border-[#d6d1c4] rounded-tl-3xl"></div>
-        <div className="absolute right-0 top-40 w-40 h-40 border-r border-t border-[#d6d1c4] rounded-tr-3xl"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-
-        {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl font-medium leading-tight text-black">
+        {/* Heading */}
+        <h1 className="text-5xl md:text-6xl font-medium leading-tight text-black">
           AI Copilot for <br />
-          <span className="text-[#004f98]">Real</span> Estate
+          <span className="text-[#004f98]">Real</span> Estate Growth
         </h1>
 
-        {/* Subtext */}
         <p className="mt-6 text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-          Never lose another REA or Domain enquiry. Harbour AI responds instantly,
-          follows up consistently, and keeps your CRM clean. Without replacing it.
+          Never lose another enquiry. Harbour AI responds instantly,
+          follows up consistently, and keeps your CRM clean.
         </p>
 
-        {/* Button */}
         <div className="mt-8">
-          <button className="bg-black text-white px-8 py-3 rounded-xl shadow-2xl hover:scale-105 transition duration-300">
+          <button className="bg-black text-white px-8 py-3 rounded-xl shadow-xl hover:scale-105 transition duration-300">
             Book a Demo
           </button>
         </div>
 
-        {/* Dashboard Wrapper */}
-        {/* Dashboard Wrapper */}
-<div className="relative mt-20 flex justify-center">
+        {/* DASHBOARD WRAPPER */}
+        <div className="relative mt-10 flex justify-center">
 
-{/* Dashboard */}
-<img
-  src={dashboard}
-  alt="Dashboard"
-  className="w-full max-w-5xl rounded-2xl shadow-2xl relative z-10"
-/>
+          <motion.div
+            style={{
+              rotateX,
+              y,
+              scale,
+              opacity,
+              transformPerspective: 1200,
+            }}
+            className="relative w-full max-w-5xl"
+          >
+            {/* Dashboard Image */}
+            <img
+              src={dashboard}
+              alt="Dashboard"
+              className="w-full rounded-2xl shadow-2xl"
+            />
 
-{/* ================= LEFT CARD ================= */}
-<div
-  className="
-    hidden lg:block
-    absolute
-    left-1/2
-    -translate-x-[150%]
-    top-[38%]   /* moved down */
-    -rotate-6
-    z-20
-  "
->
-  <div
-    className="
-      bg-white
-      rounded-2xl
-      px-6 py-4
-      shadow-[0_20px_50px_rgba(0,0,0,0.08)]
-      border border-gray-100
-      w-72
-      transition-all duration-300
-      hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,0,0,0.12)]
-    "
-  >
-    <p className="text-sm font-medium text-gray-800">
-      Plan Inventory for the next 3 months
-    </p>
+            {/* ================= LEFT CARD ================= */}
+            {/* ================= LEFT CARD ================= */}
+<div className="hidden lg:block absolute -left-16 top-80 z-80">
+  <div className="relative w-[370px] rounded-[32px] px-8 py-6
+      bg-gradient-to-r from-[#0f4c75] to-[#1177c3]
+      shadow-[0_40px_100px_rgba(0,0,0,0.35)]
+      transition-all duration-500 hover:-translate-y-2">
 
-    <div className="mt-3 flex justify-end">
-      <div className="w-9 h-9 bg-green-500 rounded-full flex items-center justify-center text-white shadow-md">
-        ↑
-      </div>
-    </div>
+    {/* Glow */}
+    <div className="absolute -inset-1 rounded-[36px] 
+        bg-gradient-to-r from-cyan-400/20 via-transparent to-green-400/20 
+        blur-2xl -z-10"></div>
+
+    {/* ONE LINE FLEX */}
+    <div className="flex items-center gap-6">
+
+{/* Avatars */}
+<div className="flex items-center -space-x-4">
+  <img
+    src="https://randomuser.me/api/portraits/men/32.jpg"
+    alt=""
+    className="w-12 h-12 rounded-full border-3 border-[#0f4c75]"
+  />
+  <img
+    src="https://randomuser.me/api/portraits/women/44.jpg"
+    alt=""
+    className="w-12 h-12 rounded-full border-3 border-[#0f4c75]"
+  />
+  <img
+    src="https://randomuser.me/api/portraits/men/65.jpg"
+    alt=""
+    className="w-12 h-12 rounded-full border-3 border-[#0f4c75]"
+  />
+</div>
+
+{/* Number + Text (Column) */}
+<div className="flex flex-col items-start">
+  <h3 className="text-3xl font-bold text-white leading-tight">
+    +1000
+  </h3>
+
+  <p className="text-white text-sm opacity-90">
+    Leads Qualified Today
+  </p>
+</div>
+
+</div>
+
   </div>
 </div>
 
-{/* ================= RIGHT CHAT CARD ================= */}
-<div
-  className="
-    hidden lg:block
-    absolute
-    right-1/2
-    translate-x-[145%]
-    top-[28%]
-    z-20
-  "
->
-  <div
-    className="
-      bg-white
-      rounded-3xl
-      p-6
-      w-96
-      shadow-[0_30px_70px_rgba(0,0,0,0.12)]
-      border border-gray-100
-      backdrop-blur-xl
-      transition-all duration-300
-      hover:-translate-y-1
-    "
-  >
-    <h4 className="text-base font-semibold text-gray-900">
-      Good Afternoon, Harsh!
-    </h4>
 
-    <p className="text-sm text-gray-500 mt-1">
-      May I help you with anything?
-    </p>
+            {/* ================= RIGHT CARD ================= */}
+            <div className="hidden lg:block absolute -right-20 top-28 z-20">
+              <div className="bg-white/95 backdrop-blur-xl rounded-[28px] p-7 w-[320px] border border-white/40 shadow-[0_40px_80px_rgba(0,0,0,0.15)] hover:-translate-y-2 transition-all duration-500">
 
-    <div className="mt-5 relative">
-      <input
-        type="text"
-        placeholder="What can I do to improve my profits?"
-        className="
-          w-full
-          rounded-full
-          bg-gray-50
-          px-5 py-3
-          text-sm
-          text-gray-700
-          outline-none
-          border border-gray-200
-          focus:ring-2 focus:ring-green-500
-          pr-14
-        "
-      />
+                <h4 className="text-lg font-semibold text-gray-900">
+                  Good Afternoon, Jordan!
+                </h4>
 
-      <button
-        className="
-          absolute right-2 top-1/2 -translate-y-1/2
-          w-10 h-10
-          bg-green-600
-          rounded-full
-          flex items-center justify-center
-          text-white
-          shadow-lg
-          hover:bg-green-700
-          transition
-        "
-      >
-        →
-      </button>
-    </div>
-  </div>
-</div>
+                <p className="text-sm text-gray-500 mt-1">
+                  3 new enquiries overnight. I've qualified 2 as hot.
+                </p>
 
-</div>
+                <div className="mt-6 relative">
+                  <input
+                    type="text"
+                    placeholder="What can I do to improve my profits?"
+                    className="w-full rounded-full bg-white px-6 py-3.5 text-sm text-gray-700 outline-none border border-gray-200 focus:border-[#004f98] pr-16 shadow-sm"
+                  />
+
+                  <button className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-[#004f98] rounded-full flex items-center justify-center text-white hover:scale-105 transition-all duration-300">
+                    →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </motion.div>
+        </div>
 
       </div>
     </section>

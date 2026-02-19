@@ -4,21 +4,18 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     logo: "/logos/oyehappy.png",
-    text: `“We were losing 30% of our REA leads to slow response times. Harbour changed that overnight. Every enquiry gets a reply within minutes and my CRM is actually up to date for the first time in years.”`,
+    text: `“We were losing 30% of our leads to slow response times. Harbour changed that overnight. Every enquiry gets a reply within minutes and my CRM is actually up to date for the first time in years.”`,
     name: "Sarah M.",
-    role: "Principal, boutique agency, Sydney NSW",
   },
   {
     logo: "/logos/goodbug.png",
     text: `"As a sales manager I used to spend Monday mornings chasing agents for follow-up notes. Now Harbour does it automatically I just check the dashboard and deal with the exceptions."`,
     name: " James K.",   
-    role: "Sales Manager, 18-agent team, Brisbane QLD",
   },
   {
     logo: "/logos/oyehappy.png",
     text: `"I was skeptical about 'another tool' but Harbour sits on top of Box+Dice, not beside it. My pipeline is cleaner, my response rate is up, and I close more appraisals."`,
     name: "Lisa T", 
-    role: "Senior Sales Agent, Melbourne VIC",
   },
 ];
 
@@ -56,13 +53,13 @@ export default function TestimonialSection() {
         </button>
 
         {/* Logo */}
-        <div className="mb-8 flex justify-center">
+        {/* <div className="mb-8 flex justify-center">
           <img
             src={testimonial.logo}
             alt="Company Logo"
             className="h-8 md:h-10 object-contain"
           />
-        </div>
+        </div> */}
 
         {/* Testimonial Text */}
         <p className="text-gray-800 text-lg md:text-2xl leading-relaxed max-w-4xl mx-auto">

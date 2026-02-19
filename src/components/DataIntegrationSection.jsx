@@ -1,22 +1,33 @@
 import React from "react";
+import rea from "../assets/crm/rea.png";
+import domain from "../assets/crm/Domain.avif";
+import forms from "../assets/crm/Website Form.webp";
+import facebook from "../assets/crm/facebooklead.png";
+import email from "../assets/crm/email.jpg";
+import reapit from "../assets/crm/Reapit.png";
+import rex from "../assets/crm/rex.svg";
+import boxdice from "../assets/crm/boxdice.png";
+import mrivault from "../assets/crm/mrivault.jpeg";
+import hubspot from "../assets/crm/hubspot.png";
+import salesforce from "../assets/crm/salesforce.webp";
 
 /* Row 1 */
 const ROW_ONE = [
-  { name: "REA Group", src: "/logos/rea.png" },
-  { name: "Domain", src: "/logos/domain.png" },
-  { name: "Website Forms", src: "/logos/forms.png" },
-  { name: "Facebook Leads", src: "/logos/facebook.png" },
-  { name: "Email Inbox", src: "/logos/email.png" },
+  { name: "REA Group", src: rea },
+  { name: "Domain", src: domain },
+  { name: "Website Forms", src: forms },
+  { name: "Facebook Leads", src: facebook },
+  { name: "Email Inbox", src: email},
 ];
 
 /* Row 2 */
 const ROW_TWO = [
-  { name: "Reapit", src: "/logos/reapit.png" },
-  { name: "Rex", src: "/logos/rex.png" },
-  { name: "Box+Dice", src: "/logos/boxdice.png" },
-  { name: "MRI Vault", src: "/logos/mrivault.png" },
-  { name: "HubSpot", src: "/logos/hubspot.png" },
-  { name: "Salesforce", src: "/logos/salesforce.png" },
+  { name: "Reapit", src: reapit },
+  { name: "Rex", src: rex },
+  { name: "Box+Dice", src: boxdice },
+  { name: "MRI Vault", src: mrivault },
+  { name: "HubSpot", src: hubspot },
+  { name: "Salesforce", src: salesforce },
 ];
 
 function LogoCard({ logo }) {
@@ -39,7 +50,7 @@ function LogoCard({ logo }) {
 
 export default function LeadsIntegrationSection() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-14 sm:py-16 lg:py-20 overflow-hidden">
 
       <div className="relative max-w-6xl mx-auto px-6 text-center">
 

@@ -84,7 +84,7 @@ export default function LeadsIntegrationSection() {
 
           {/* Row 1 – Normal Direction */}
           <div className="overflow-hidden">
-            <div className="flex gap-10 animate-marquee w-max">
+            <div className="flex gap-10 animate-marquee-right w-max">
               {[...ROW_ONE, ...ROW_ONE].map((logo, index) => (
                 <LogoCard key={index} logo={logo} />
               ))}
@@ -93,7 +93,7 @@ export default function LeadsIntegrationSection() {
 
           {/* Row 2 – Reverse Using CSS Property */}
           <div className="overflow-hidden">
-            <div className="flex gap-10 animate-marquee w-max [animation-direction:reverse]">
+            <div className="flex gap-10 animate-marquee-left w-max">
               {[...ROW_TWO, ...ROW_TWO].map((logo, index) => (
                 <LogoCard key={index} logo={logo} />
               ))}

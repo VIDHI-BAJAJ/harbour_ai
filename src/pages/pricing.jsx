@@ -33,13 +33,13 @@ const Pricing = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
             Master pricing
           </h1>
 
           {/* Subtext */}
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
-            Track SKU-level pricing trends across localities and pin codes.
+          Select a plan built for your organisation’s scale. Unlock AI, instant responses, and powerful CRM management.
           </p>
 
           {/* Button */}

@@ -22,11 +22,11 @@ export default function Hero() {
   const opacity = useTransform(scrollY, [0, 200], isDesktop ? [0, 1] : [1, 1]);
 
   return (
-    <section className="relative pt-40 pb-32 text-center bg-[#f5f3ef] overflow-hidden">
+    <section className="relative pt-10 md:pt-15 md:pb-32 pb-8 text-center bg-[#f5f3ef] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Heading */}
-        <h1 className="text-5xl md:text-6xl font-medium leading-tight text-black">
+        <h1 className="text-5xl md:text-8xl font-medium leading-tight text-black">
           AI Copilot for <br />
           <span className="text-[#004f98]">Real</span> Estate Growth
         </h1>
@@ -38,7 +38,13 @@ export default function Hero() {
 
         <div className="mt-8">
           <button className="bg-black text-white px-8 py-3 rounded-xl shadow-xl hover:scale-105 transition duration-300">
-            Book a Demo
+          <a
+              href="https://calendly.com/pragundass-ai/10min?month=2026-02"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-600"
+            > Book a Demo
+            </a>
           </button>
         </div>
 

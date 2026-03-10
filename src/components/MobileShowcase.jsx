@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import screen1 from "../assets/Images/mobilemockup.png";
-import screen2 from "../assets/Images/mobilemockup2.png";
-
+import screen1 from "../assets/Images/mockupmobile.png";
+// import screen2 from "../assets/Images/mockupmobile3.png";
 
 const sections = [
   {
@@ -10,11 +9,11 @@ const sections = [
     desc: "We standardise data from every platform - so you get one clean, consistent view that actually makes sense.",
     image: screen1,
   },
-  {
-    title: "AI-driven Recommendations",
-    desc: "Make smarter decisions with actionable insights from AI.",
-    image: screen2,
-  },
+  // {
+  //   title: "AI-driven Recommendations",
+  //   desc: "Make smarter decisions with actionable insights from AI.",
+  //   image: screen2,
+  // },
 ];
 
 export default function MobileFixedSection() {
@@ -54,33 +53,31 @@ export default function MobileFixedSection() {
       setActiveIndex(newIndex);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section className="py-14 sm:py-16 lg:py-20 ">
+    <section className="py-14 sm:py-16 lg:py-20">
 
       {/* HEADER */}
       <div className="text-center px-6">
-        <h2 className="text-3xl md:text-5xl font-semibold mb-4">
+        <h2 className="text-3xl md:text-5xl font-semibold mb-14">
           Analyse it all right from your pocket
         </h2>
-        <p className="text-gray-600 max-w-xl mx-auto">
-          Our iOS and Android Mobile app helps you access AI-driven insights.
-        </p>
       </div>
 
       {/* SCROLL SECTION */}
       <div
         id="scroll-section"
-        className="relative h-[400vh]"
+        className="relative"
+        style={{ height: `${sections.length * 100}vh` }}
       >
 
         {/* STICKY WRAPPER */}
-        <div className="sticky top-0 md:top-24 h-screen md:h-[80vh] flex items-center justify-center">
+        <div className="sticky top-20 md:top-24 h-[70svh] md:h-[90vh] flex items-center justify-center">
 
           {/* ================= DESKTOP ================= */}
           <div className="hidden md:grid grid-cols-3 items-center max-w-6xl w-full px-8">
@@ -102,13 +99,13 @@ export default function MobileFixedSection() {
               )}
             </div>
 
-            {/* PHONE */}
+            {/* PHONE IMAGE */}
             <div className="flex justify-center">
               <img
                 key={activeIndex}
                 src={sections[activeIndex].image}
                 alt=""
-                className="h-[80vh] w-auto object-contain transition-all duration-300"
+                className="h-[105vh] w-auto object-contain transition-all duration-500"
               />
             </div>
 
@@ -132,16 +129,16 @@ export default function MobileFixedSection() {
           </div>
 
           {/* ================= MOBILE ================= */}
-          <div className="md:hidden flex flex-col items-center">
+          <div className="md:hidden flex flex-col items-center justify-center text-center px-6">
 
             <img
               key={activeIndex}
               src={sections[activeIndex].image}
               alt=""
-              className="w-[260px] mb-8 transition-all duration-300 h-full"
+              className="w-[85%] max-w-[360px] h-auto transition-all duration-500"
             />
 
-            <div className="text-center px-6 max-w-md">
+            <div className="mt-6 max-w-sm">
               <h3 className="text-xl font-semibold mb-3">
                 {sections[activeIndex].title}
               </h3>
@@ -153,9 +150,7 @@ export default function MobileFixedSection() {
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }

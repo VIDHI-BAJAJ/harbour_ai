@@ -4,7 +4,7 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
    {
     question: "Does Harbour replace my CRM?",
-    answer: "No. Harbour sits on top of your existing CRM — Reapit, Rex, Box+Dice, MRI Vault, HubSpot, or Salesforce. It enriches records, logs activities, and keeps your pipeline current. No migration, no disruption.",
+    answer: "No. Harbour sits on top of your existing CRM - Reapit, Rex, Box+Dice, MRI Vault, HubSpot, or Salesforce. It enriches records, logs activities, and keeps your pipeline current. No migration, no disruption.",
   },
   {
     question: "Is this compliant with Australian Spam Act and Privacy Act requirements?",
@@ -23,7 +23,7 @@ const faqs = [
  
   {
     question: "We already pay for REA and a CRM. Why add another tool?",
-    answer: "Harbour turns the leads you're already paying for into conversations, appraisals, and listings — instead of letting them expire in your inbox. For most agencies, recovering even one missed commission per month more than covers the cost.",
+    answer: "Harbour turns the leads you're already paying for into conversations, appraisals, and listings instead of letting them expire in your inbox. For most agencies, recovering even one missed commission per month more than covers the cost.",
   },
 
 ];

@@ -78,7 +78,7 @@ export default function AgentSection() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-16">
+        <div className="flex flex-col md:flex-row gap-16 md:ml-24 ml-1">
 
           {/* LEFT SIDE (Scrolling Content) */}
           <div className="md:w-1/2 space-y-20">
@@ -110,11 +110,11 @@ export default function AgentSection() {
 
           {/* RIGHT SIDE (Sticky Image Desktop Only) */}
           <div className="hidden md:block md:w-1/2">
-            <div className="sticky top-32">
+            <div className="sticky top-32 ">
               <img
                 src={steps[activeStep].image}
                 alt=""
-                className="rounded-3xl transition-all duration-500"
+                className="rounded-3xl transition-all duration-500 h-[400px]"
               />
             </div>
           </div>

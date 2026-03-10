@@ -4,7 +4,7 @@ import logo from "../assets/footerlogo.png";
 
 export default function Footer() {
   return (
-    <section className="w-full px-4 md:px-8 pb-10">
+    <section className="w-full px-4 md:px-8">
       <div className="bg-black text-white rounded-[32px] px-6 md:px-16 py-12 md:py-16 max-w-7xl mx-auto">
 
         {/* TOP SECTION */}
@@ -17,7 +17,7 @@ export default function Footer() {
               alt="aievoked"
               className="h-10 md:h-12 object-contain"
             />
-            <p>The AI Copilot for  Real Estate</p>
+            {/* <p>The AI Copilot for  Real Estate</p> */}
           </div>
 
           {/* Use Cases */}
@@ -31,8 +31,6 @@ export default function Footer() {
               <li className="hover:text-white cursor-pointer">CRM Sync & Hygiene</li>
               <li className="hover:text-white cursor-pointer">Team Dashboard & SLA</li>
               <li className="hover:text-white cursor-pointer">Pricing</li>
-              <li className="hover:text-white cursor-pointer">Playbook</li>
-           
 
             </ul>
           </div>
@@ -45,8 +43,6 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>hello@aievoked.com</li>
               <li>Book a Demo</li>
-              <li>LinkedIn</li>
-              <li>Support</li>
 
             </ul>
           </div>

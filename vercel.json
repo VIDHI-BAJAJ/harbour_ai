@@ -1,8 +1,14 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/invoice",
-      "destination": "https://evoke-accounts.vercel.app/"
+      "destination": "https://evoke-accounts.vercel.app/login",
+      "permanent": false
+    },
+    {
+      "source": "/invoice/:path*",
+      "destination": "https://evoke-accounts.vercel.app/:path*",
+      "permanent": false
     }
   ]
 }

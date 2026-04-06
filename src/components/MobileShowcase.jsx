@@ -5,8 +5,8 @@ import screen1 from "../assets/Images/mockupmobile.png";
 
 const sections = [
   {
-    title: "Track combined performance across all your ecom channels",
-    desc: "We standardise data from every platform - so you get one clean, consistent view that actually makes sense.",
+    title: "Never miss a lead again",
+    desc: "Harbour AI captures every buyer and seller inquiry from Facebook Ads, portals, and referrals and instantly qualifies, scores, and routes them to the right agent. No manual follow-up. No dropped leads.",
     image: screen1,
   },
   // {
@@ -116,10 +116,10 @@ export default function MobileFixedSection() {
 
                   <div className="absolute top-6 left-[-100px] w-[100px] h-[2px] bg-green-500"></div>
 
-                  <h3 className="text-2xl font-semibold mb-4">
+                  <h3 className="text-2xl font-semibold mb-2 pl-3 mt-3">
                     {sections[activeIndex].title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 pl-3">
                     {sections[activeIndex].desc}
                   </p>
                 </div>

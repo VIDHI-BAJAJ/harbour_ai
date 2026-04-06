@@ -3,10 +3,6 @@
     {
       "source": "/invoice/:path*",
       "destination": "https://evoke-accounts.vercel.app/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }

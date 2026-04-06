@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import screen1 from "../assets/Images/mockupmobile.png";
+import screen1 from "../assets/images/mockupmobile.png";
 // import screen2 from "../assets/Images/mockupmobile3.png";
 
 const sections = [

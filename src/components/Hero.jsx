@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import dashboard from "../assets/Images/dashboard.png";
+import dashboard from "../assets/images/dashboard.png";
 
 export default function Hero() {
   const { scrollY } = useScroll();

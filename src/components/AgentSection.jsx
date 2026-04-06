@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import img1 from "../assets/Images/side1.png";
-import img2 from "../assets/Images/slide2.png";
-import img3 from "../assets/Images/slide3.png";
-import img4 from "../assets/Images/slide3.png";
+import img1 from "../assets/images/side1.png";
+import img2 from "../assets/images/slide2.png";
+import img3 from "../assets/images/slide3.png";
+import img4 from "../assets/images/slide3.png";
 
 const steps = [
   {

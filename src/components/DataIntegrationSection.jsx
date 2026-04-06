@@ -6,7 +6,7 @@ import facebook from "../assets/crm/facebooklead.png";
 import email from "../assets/crm/email.jpg";
 import reapit from "../assets/crm/Reapit.png";
 import rex from "../assets/crm/rex.svg";
-import boxdice from "../assets/crm/boxdice.png";
+import boxdice from "../assets/crm/Boxdice.png";
 import mrivault from "../assets/crm/mrivault.jpeg";
 import hubspot from "../assets/crm/hubspot.png";
 import salesforce from "../assets/crm/salesforce.webp";
